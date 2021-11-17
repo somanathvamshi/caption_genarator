@@ -95,24 +95,24 @@ def max_length(descriptions):
 
 # ** features = extract_features(dataset_images)
 # ** dump(features, open("features.p", "wb"))
-features = load(open("features.p", "rb"))
+# features = load(open("features.p", "rb"))
 
 
-dataset_path = os.getcwd() + '\\dataset\\'
-dataset_text = dataset_path + 'Text'
-filename = dataset_text + "/" + "Flickr_8k.trainImages.txt"
+# dataset_path = os.getcwd() + '\\dataset\\'
+# dataset_text = dataset_path + 'Text'
+# filename = dataset_text + "/" + "Flickr_8k.trainImages.txt"
 
-descriptions = all_img_captions(filename)
+# descriptions = all_img_captions(filename)
 
-#train = loading_data(filename)
-train_imgs = load_photos(filename)
-train_descriptions = load_clean_descriptions("descriptions.txt", train_imgs)
-train_features = load_features(train_imgs)
+# #train = loading_data(filename)
+# train_imgs = load_photos(filename)
+# train_descriptions = load_clean_descriptions("descriptions.txt", train_imgs)
+# train_features = load_features(train_imgs)
 
 
-tokenizer = create_tokenizer(train_descriptions)
-dump(tokenizer, open('tokenizer.p', 'wb'))
-vocab_size = len(tokenizer.word_index) + 1
-print('Vocab Size:', vocab_size)
+# tokenizer = create_tokenizer(train_descriptions)
+# dump(tokenizer, open('tokenizer.p', 'wb'))
+# vocab_size = len(tokenizer.word_index) + 1
+# print('Vocab Size:', vocab_size)
 
-max_length = max_length(descriptions)
+# max_length = max_length(descriptions)
