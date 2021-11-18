@@ -43,11 +43,6 @@ def create_sequences(tokenizer, max_length, desc_list, feature):
     return np.array(X1), np.array(X2), np.array(y)
 
 
-#((47, 2048), (47, 32), (47, 7577))
-
-# %%
-
-
 def define_model(vocab_size, max_length):
     # define the captioning model
 
