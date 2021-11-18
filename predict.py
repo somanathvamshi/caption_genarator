@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import numpy as np
 from pickle import load
 from PIL import Image
@@ -54,8 +53,9 @@ def predict(img_path, max_length=32):
     model = load_model('models/model_9.h5')
     xception_model = Xception(include_top=False, pooling="avg")
     photo = extract_features(img_path, xception_model)
-    img = Image.open(img_path)
+    # img = Image.open(img_path)
     description = generate_desc(model, tokenizer, photo, max_length)
     print("\n\n")
     print(description)
-    plt.imshow(img)
+    # plt.imshow(img)
+    return description
