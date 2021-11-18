@@ -4,22 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Image Caption Generator</title>
 </head>
 
 <body>
-    <div>
+    <form action='/predict' method="POST" enctype="multipart/form-data">
 
-        <form action='/predict' method="POST" enctype="multipart/form-data">
-            <h1>Upload Image</h1>
-            <input type='file' name="file"><br><br>
-            <button type="submit">Generate</button>
-        </form>
+        <div class="drag-area">
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <header>Drag & Drop to Upload File</header>
+            <span>OR</span>
+            <input type="file" name="file" hidden>
+            <button type="button">Browse File</button>
+        </div>
 
-    </div>
+        <button class="generate-btn" type="submit"> Generate </button>
+
+    </form>
 
 
+    <script src="/static/js/script.js"></script>
 </body>
 
 </html>

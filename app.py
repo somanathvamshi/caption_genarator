@@ -17,9 +17,12 @@ def result():
         filename = request.files['file']
         filename = secure_filename(filename.filename)
 
-        filepath = 'test/' + filename
+        filepath = 'static/images/' + filename
         # print(filename)
+
         description = predict(filepath)
+        description = description[6:-4]
+
         output = {
             "filename": filename,
             "description": description
