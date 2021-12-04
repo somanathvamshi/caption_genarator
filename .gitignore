@@ -5,3 +5,6 @@ NA
 test
 __pycache__
 images
+__pycache__/predict.cpython-38.pyc
+__pycache__/preprocessing.cpython-38.pyc
+__pycache__/utility.cpython-38.pyc
