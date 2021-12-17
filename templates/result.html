@@ -11,7 +11,8 @@
 
 <body>
     <div class="region">
-        <img src="static/images/{{ result.filename }}" height="300" alt={{result.filename}} />
+        <!-- <img src="http://0.0.0.0:5000/uploads/{{ result.filename }}" height="300" alt={{result.filename}} /> -->
+        <img src="http://localhost:5000/uploads/{{ result.filename }}" height="300" alt={{result.filename}} />
         <br>
         <div class="desc">
             {{result.description}}<br>

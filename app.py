@@ -48,6 +48,7 @@ def result():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         filepath = url_for('uploaded_file', filename=filename)
+        # filepath = f'http://0.0.0.0:{PORT}{filepath}'
         filepath = f'http://localhost:{PORT}{filepath}'
         print('\n', filepath, '\n')
 
@@ -84,5 +85,7 @@ def result():
 
 
 if __name__ == '__main__':
-    PORT = 10000
-    app.run(debug=True, port=PORT)
+    PORT = 5000
+    # Only for production
+    # app.run(host='0.0.0.0')
+    app.run(host='localhost')
