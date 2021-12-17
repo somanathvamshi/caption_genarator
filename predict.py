@@ -1,6 +1,8 @@
+from io import BytesIO
 import numpy as np
 from pickle import load
 from PIL import Image
+import requests
 
 from keras.applications.xception import Xception
 from keras.models import load_model
@@ -8,8 +10,13 @@ from keras.preprocessing.sequence import pad_sequences
 
 
 def extract_features(filename, model):
+
+    response = requests.get(filename)
+    image = Image.open(BytesIO(response.content))
+    # image = Image.open(filename)
     try:
-        image = Image.open(filename)
+        image = Image.open(BytesIO(response.content))
+        print(type(image))
     except:
         print(
             "ERROR: Couldn't open image! Make sure the image path and extension is correct")
